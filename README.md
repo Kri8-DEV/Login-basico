@@ -1,18 +1,19 @@
-# login
+# Point of sale (POS)
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Generic app to manage the inventory and sales of bussiness
+Author: KRI Eigth Team
 
 ## Project Setup
 
+Install the following dependencies in order to get the best experience
+
+- Fontawesome
+- Sweetalert2
+- Bootstrap
+
 ```sh
+npm i vue-sweetalert2
+npm i bootstrap-vue
 npm install
 ```
 
