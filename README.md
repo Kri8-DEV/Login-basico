@@ -10,10 +10,14 @@ Install the following dependencies in order to get the best experience
 - Fontawesome
 - Sweetalert2
 - Bootstrap
+- Axios
+- JS Cookie
 
 ```sh
-npm i vue-sweetalert2
-npm i bootstrap-vue
+npm i vue-sweetalert2 --save
+npm i bootstrap-vue --save
+npm i axios --save
+npm i js-cookie --save
 npm install
 ```
 

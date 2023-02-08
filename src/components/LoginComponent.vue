@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed, inject } from "vue";
 import Swal from "sweetalert2";
 import axios from "axios";
+import Cookies from "js-cookie";
 const hostname = inject("hostname");
 
 let showPassword = false;
@@ -86,6 +87,8 @@ async function login(data) {
         // console.log(response);
         // redirect to home page
         if ( response["status"] === 200 ) {
+          // console.info("token " + response["data"]["data"]["token"]);
+          Cookies.set("token", response["data"]["data"]["token"]);
           Swal.fire({
             icon: "success",
             title: "Bienvenido " + response["data"]["data"]["user"]["username"]
