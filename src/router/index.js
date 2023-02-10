@@ -13,9 +13,6 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("../views/AboutView.vue"),
     },
     {
@@ -30,7 +27,10 @@ router.beforeEach((to, from, next) => {
   const publicPages = ["/login"];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = Cookies.get("token");
-
+  
+  if(loggedIn && to.path === "/login"){
+    return next("/");
+  }
   // trying to access a restricted page + not logged in
   // redirect to login page
   if (authRequired && !loggedIn) {
@@ -38,6 +38,8 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
+  
+
 });
 
 export default router;

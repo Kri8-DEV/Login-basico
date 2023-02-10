@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from "vue-router";
-import HeaderItem from "./components/structure/HeaderNav.vue";
+import SidebarComponent from "./components/structure/SidebarComponent.vue";
 
 import { useRoute } from "vue-router";
 const route = useRoute();
@@ -11,7 +11,7 @@ function principal() {
 </script>
 
 <template>
-  <HeaderItem v-if="principal()" />
+  <SidebarComponent v-if="principal()" />
   <RouterView />
 </template>
 

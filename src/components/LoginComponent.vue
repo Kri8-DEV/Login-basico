@@ -1,5 +1,5 @@
 <script setup>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed, inject } from "vue";
 import Swal from "sweetalert2";
 import axios from "axios";
@@ -13,13 +13,18 @@ let password = '';
 // Function to show or hide password
 const togglePassword = () => {
   const passwordInput = document.getElementById("password-input");
+  let icon = document.getElementById("icon-password");
 
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
     showPassword = !showPassword;
+    icon.classList.remove("bx-show");
+    icon.classList.add("bx-hide");
     console.info(showPassword);
   } else {
     passwordInput.type = "password";
+    icon.classList.remove("bx-hide");
+    icon.classList.add("bx-show");
     showPassword = !showPassword;
     console.info(showPassword);
   }
@@ -27,10 +32,15 @@ const togglePassword = () => {
 
 // Function to change icon
 const iconToDisplay = computed(() => {
+  // let icon = document.getElementById("password-icon");
   if (showPassword) {
-    return "fa-regular fa-eye-slash";
+    // icon.classList.remove("bx-show-alt");
+    // icon.classList.add("bx-hide-alt");
+    return "bx-hide-alt";
   } else {
-    return "fa-regular fa-eye";
+    // icon.classList.remove("bx-show-alt");
+    // icon.classList.add("bx-hide-alt");
+    return "bx-hide";
   }
 });
 
@@ -157,11 +167,12 @@ async function login(data) {
               placeholder="Contraseña"
             />
             <button type="button" id="password-btn" @click="togglePassword()">
-              <FontAwesomeIcon
+              <!-- <FontAwesomeIcon
                 :icon="iconToDisplay"
                 id="icon-password"
                 inverse
-              />
+              /> -->
+              <i class='bx bx-sm' id="icon-password" :class="iconToDisplay"></i>
             </button>
           </div>
           <div class="d-flex justify-content-around mb-5">

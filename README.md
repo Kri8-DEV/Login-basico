@@ -7,17 +7,24 @@ Author: KRI Eigth Team
 
 Install the following dependencies in order to get the best experience
 
-- Fontawesome
+- Boxicons
 - Sweetalert2
 - Bootstrap
 - Axios
 - JS Cookie
 
+If you have a previous version of the project and just need one dependency, write the instruccion 
 ```sh
+npm i boxicons --save
 npm i vue-sweetalert2 --save
 npm i bootstrap-vue --save
 npm i axios --save
 npm i js-cookie --save
+```
+
+Or just run the following commands to install all the dependencies
+```sh
+npm i boxicons vue-sweet vue-sweetalert2 bootstrap-vue axios js-cookie --save
 npm install
 ```
 
