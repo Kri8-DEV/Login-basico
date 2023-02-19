@@ -2,9 +2,33 @@
 import Cookie from "js-cookie";
 
 const logout = () => {
-  Cookie.remove('token');
+  Cookie.remove('refreshToken');
   window.location.href = '/';
 }
+
+// async function logout() {
+//   try{
+//     await axios
+//       .post(
+//         `${hostname}auth/logout`,
+//         {
+//           refreshtoken: Cookie.get("refreshToken"),
+//         }, 
+//         { 
+//           headers: {
+//             Authorization: `Bearer ${Cookie.get("refreshToken")}`,
+//           },
+//         })
+//       .then((Response) => {
+//         console.log(Response);
+//       });
+//     } catch (error) {
+//       console.error(error);
+//     }
+    
+//     // Cookie.remove('token');
+//     // window.location.href = '/';
+// }
 
 const toggleSidebar = () => {
   let sidebar = document.querySelector(".sidebar");

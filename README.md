@@ -12,19 +12,21 @@ Install the following dependencies in order to get the best experience
 - Bootstrap
 - Axios
 - JS Cookie
+- Sessions
 
-If you have a previous version of the project and just need one dependency, write the instruccion 
+If you have a previous version of the project and just need one dependency, write the corresponding command
 ```sh
 npm i boxicons --save
 npm i vue-sweetalert2 --save
 npm i bootstrap-vue --save
 npm i axios --save
 npm i js-cookie --save
+npm i vue-sessions --save
 ```
 
 Or just run the following commands to install all the dependencies
 ```sh
-npm i boxicons vue-sweet vue-sweetalert2 bootstrap-vue axios js-cookie --save
+npm i boxicons vue-sweet vue-sweetalert2 bootstrap-vue axios js-cookie vue-sessions --save
 npm install
 ```
 

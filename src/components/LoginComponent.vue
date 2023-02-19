@@ -98,14 +98,19 @@ async function login(data) {
         // redirect to home page
         if ( response["status"] === 200 ) {
           // console.info("token " + response["data"]["data"]["token"]);
-          Cookies.set("token", response["data"]["data"]["token"]);
+          console.info(response);
+          Cookies.set("token", response["data"]["data"]["token"], {
+            httpOnly: true,
+            // secure: true
+          });
+          Cookies.set("refreshToken", response["data"]["data"]["refreshToken"]);
           Swal.fire({
             icon: "success",
             title: "Bienvenido " + response["data"]["data"]["user"]["username"]
           });
           setTimeout(() => {
             window.location.href = "/";
-          }, 2000);
+          }, 1000);
         }
       });
   } catch (error) {
@@ -203,6 +208,9 @@ async function login(data) {
 </template>
 
 <style scoped>
+.main {
+  top: 50px;
+}
 #password-btn {
   position: absolute;
   top: 50%;

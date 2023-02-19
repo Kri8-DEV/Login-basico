@@ -26,7 +26,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const publicPages = ["/login"];
   const authRequired = !publicPages.includes(to.path);
-  const loggedIn = Cookies.get("token");
+  const loggedIn = Cookies.get("refreshToken");
   
   if(loggedIn && to.path === "/login"){
     return next("/");
